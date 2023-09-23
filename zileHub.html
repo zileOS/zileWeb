@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0-beta.1/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="http://datatables.net/release-datatables/extensions/ColVis/css/dataTables.colVis.css">
+  
+  <script type="text/javascript" language="javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" language="javascript" src="https://datatables.net/release-datatables/extensions/ColVis/js/dataTables.colVis.js"></script>  
+  
+</head>
+<body>
+<table id="issuestable" class="display" cellspacing="0" width="100%">
+
+<thead><tr><th>Model</th></th><th>OS Version</th><th>Subject</th></thead>
+<tr><td>2023-09-21</td><td>chromium</td><td><a href='https://chromium-review.googlesource.com/4878258'>Use base::EraseIf()</a></td><td>Sakib Shabir Tantray</td></tr>
+
+<script>
+$(document).ready(function() {
+  $('#issuestable').dataTable( {
+    "dom": 'C<"clear">lfrtip',
+    "stateSave": true, 
+    "stateDuration": 60 * 60 * 24 * 30,
+    "order": [ 0, 'desc' ],
+    "lengthMenu": [[15, 25, 50, -1], [15, 25, 50, "All"]],
+    "columnDefs": [ { "searchable": false, "targets": 0 } ],
+  } );
+} );
+</script>
+</body>
